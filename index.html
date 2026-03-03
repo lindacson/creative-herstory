@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script src="loading.js"></script>
+    <script src="dialogue.js"></script>
+    <!-- You can add your own favicon and fonts by swapping out these links -->
+    <link rel="icon" type="image/png" href="./characters/queen.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Narrative Game Template</title>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <main>
+      <div id="loading">
+        <!-- You can change what shows up on the loading page, I just used a css animation so there's no images to load -->
+        <div class="loading-dots"></div>
+      </div>
+      <!-- All these game stages start out hidden. That class gets added or removed as you progress -->
+      <div id="titlescreen" class="hidden">
+        <div class="wrapper">
+          <!-- This wrapper class is totally optional, I'm just using it for styling -->
+          <h1>The Queen’s Story:</h1>
+          <h2>A Journey Through Pre-Colonial Africa</h2>
+          <p>
+            by
+            <a target="_blank" href="https://github.com/lindacson/narrative-game"
+              >Linda Son</a
+            >
+          </p>
+          <button onclick="startGame()">start</button>
+        </div>
+      </div>
+      <div id="dialogue-container" class="hidden">
+        <div class="dialogue-main">
+          <div id="character-portrait"></div>
+          <div class="dialogue-responses-wrapper" id="responses">
+            <!-- This is where the dialogue response options will get populated -->
+          </div>
+          <div class="dialogue-wrapper">
+            <!-- This is where the character name and dialogue will get populated on the bottom of the screen  -->
+            <div id="speaker-name"></div>
+            <div class="text">
+              <p id="character-dialogue"></p>
+              <button id="progress-dialogue" class="hidden" aria-label="next">
+                <div></div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="how-to-play" class="hidden">
+        <div class="wrapper">
+          <div class="credits-content">
+            <h2>HOW TO PLAY</h2>
+            <hr />
+            <h3>THE BASICS</h3>
+            <p>
+              A scenario will appear on screen. Read through it, then choose
+              from the options presented to decide what happens next.
+            </p>
+            <h3>MAKING CHOICES</h3>
+            <p>
+              When it's your turn to decide, a set of buttons will appear.
+              Click the one that reflects the choice you want to make.
+              There's no single right answer — every path is valid.
+            </p>
+            <h3>DIFFERENT ENDINGS</h3>
+            <p>
+              The options you choose shape the story. Different combinations
+              of decisions lead to different outcomes, so don't be afraid to
+              play again and explore another path.
+            </p>
+            <h3>ADVANCING TEXT</h3>
+            <p>
+              While a character is speaking, press <strong>Space</strong>,
+              <strong>Enter</strong>, or click the arrow button to move to
+              the next line. Clicking the text itself (or pressing those
+              keys) while text is still typing will skip ahead and show
+              the full line instantly.
+            </p>
+            <hr />
+            <p><em>Ready? Click play to begin.</em></p>
+          </div>
+          <button onclick="playFromHowToPlay()">play</button>
+        </div>
+      </div>
+      <div id="credits" class="hidden">
+        <div class="wrapper">
+          <div class="credits-content">
+            <h2>CREDITS</h2>
+            <hr />
+            <p><strong>Created by:</strong> Linda Son</p>
+            <p><strong>Course:</strong> BST 301U — Women in African History</p>
+            <p><strong>Professor:</strong> Bright Alozie</p>
+            <p><strong>Institution:</strong> Portland State University</p>
+            <p><strong>Term:</strong> Winter 2026</p>
+            <hr />
+            <h3>HISTORICAL INSPIRATION</h3>
+            <p>
+              This game honors the legacy of the Kandakes (Candaces) of Kush —
+              powerful queens who ruled the Kingdom of Kush (modern-day Sudan)
+              from approximately 300 BCE to 350 CE.
+            </p>
+            <hr />
+            <h3>PRIMARY SOURCES &amp; SCHOLARSHIP</h3>
+            <ul>
+              <li>Shinnie, P.L. <em>Meroe: A Civilization of the Sudan.</em> Thames &amp; Hudson, 1967.</li>
+              <li>Tyldesley, Joyce. <em>Hatchepsut: The Female Pharaoh.</em> Penguin, 1998.</li>
+              <li>Connah, Graham. <em>African Civilizations.</em> Cambridge University Press, 2001.</li>
+              <li>Mire, Sada. <em>Divine Fertility: The Continuity in Transformation of an Ideological Framework in Northeast Africa.</em> UCL Press, 2019.</li>
+              <li>Alozie, Bright. <em>Women in African History</em> — Course Lectures &amp; Materials. Portland State University, 2026.</li>
+            </ul>
+            <hr />
+            <h3>TECHNICAL CREDITS</h3>
+            <p><strong>Game Development:</strong> HTML, CSS, JavaScript</p>
+            <p><strong>Character Sprites:</strong> Original artwork</p>
+            <p>
+              Built on the
+              <a target="_blank" href="https://github.com/lindacson/narrative-game">narrative-game</a>
+              template.
+            </p>
+            <hr />
+            <h3>ACKNOWLEDGMENTS</h3>
+            <p>
+              Special thanks to Professor Bright Alozie for creating a course
+              that encourages creative engagement with African women's histories.
+            </p>
+            <p>
+              This project was created to explore the themes of African
+              female power, agency, and the altered realities of colonialism.
+            </p>
+          </div>
+          <button onclick="playFromCredits()">play</button>
+        </div>
+      </div>
+      <div id="epilogue" class="hidden">
+        <p id="epilogue-result"></p>
+        <button onclick="restart()">play again?</button>
+        <button onclick="showCredits()">credits</button>
+      </div>
+    </main>
+  </body>
+</html>
