@@ -5,11 +5,12 @@ imgChar1 = "./characters/linda.png"
 imgChar2 = "./characters/queen.png";
 imgChar3 = "./characters/queen_mother.png";
 imgChar4 = "./characters/sister.png";
-imgChar5 = "./characters/niece.png";
-imgChar6 = "./characters/nephew.png";
-imgChar7 = "./characters/king.png";
-imgChar8 = "./characters/priest.png";
-imgChar9 = "./characters/roman.png";
+imgChar5 = "./characters/general.png";
+imgChar6 = "./characters/niece.png";
+imgChar7 = "./characters/nephew.png";
+imgChar8 = "./characters/king.png";
+imgChar9 = "./characters/priest.png";
+imgChar10 = "./characters/roman.png";
 
 const imageSrcs = [
   imgChar1,
@@ -20,7 +21,8 @@ const imageSrcs = [
   imgChar6,
   imgChar7,
   imgChar8,
-  imgChar9
+  imgChar9,
+  imgChar10
 ];
 imagesLoaded = false;
 

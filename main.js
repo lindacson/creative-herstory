@@ -5,11 +5,12 @@ const DIALOGUE = 2;
 const EPILOGUE = 3;
 const CREDITS = 4;
 const HOW_TO_PLAY = 5;
+const SCENE_CONTEXT = 6;
 
 state = {
   gameStage: LOADING,
   isLoading: true,
-  epilogue: null,
+  score: 0,
 };
 
 function donePreloading() {
@@ -131,9 +132,39 @@ function advance(textNode) {
   clearListeners();
   if (textNode.next == FINISH) {
     showEpilogue();
+  } else if (textNode.showContext) {
+    showSceneContext(textNode.showContext);
   } else {
     showDialogue(textNode.next);
   }
+}
+
+function showSceneContext(sceneId) {
+  const context = SCENE_CONTEXTS.find((c) => c.id === sceneId);
+  state.currentContext = context;
+  state.gameStage = SCENE_CONTEXT;
+  showGameStage();
+  $("#context-title").text(context.title);
+  if (context.time) {
+    $("#context-time-row").removeClass("hidden");
+    $("#context-time").text(context.time);
+  } else {
+    $("#context-time-row").addClass("hidden");
+  }
+  if (context.location) {
+    $("#context-location-row").removeClass("hidden");
+    $("#context-location").text(context.location);
+  } else {
+    $("#context-location-row").addClass("hidden");
+  }
+  $("#context-body").html(context.body);
+}
+
+function continueFromContext() {
+  const context = state.currentContext;
+  state.gameStage = DIALOGUE;
+  showGameStage();
+  showDialogue(context.nextDialogue);
 }
 
 function selectOption(option) {
@@ -145,8 +176,8 @@ function selectOption(option) {
     showHowToPlay();
     return;
   }
-  if (option.setState) {
-    state = Object.assign(state, option.setState);
+  if (option.points) {
+    state.score += option.points;
   }
   option.chatMoods?.forEach((chatMood) => {
     showChat(chatMood);
@@ -167,7 +198,7 @@ function playFromCredits() {
   } else {
     state.gameStage = DIALOGUE;
     showGameStage();
-    showDialogue(8);
+    showDialogue(10);
   }
 }
 
@@ -180,7 +211,7 @@ function showHowToPlay() {
 function playFromHowToPlay() {
   state.gameStage = DIALOGUE;
   showGameStage();
-  showDialogue(8);
+  showDialogue(10);
 }
 
 function showGameStage() {
@@ -190,6 +221,7 @@ function showGameStage() {
   $("#how-to-play").addClass("hidden");
   $("#credits").addClass("hidden");
   $("#epilogue").addClass("hidden");
+  $("#scene-context").addClass("hidden");
   switch (state.gameStage) {
     case LOADING:
       $("#loading").removeClass("hidden");
@@ -209,19 +241,23 @@ function showGameStage() {
     case EPILOGUE:
       $("#epilogue").removeClass("hidden");
       break;
+    case SCENE_CONTEXT:
+      $("#scene-context").removeClass("hidden");
+      break;
   }
 }
 
 function showEpilogue() {
   state.gameStage = EPILOGUE;
   showGameStage();
-  const epilogueObject = EPILOGUES.find(
-    (epilogue) => epilogue.id === state.epilogue
-  );
+  const epilogueObject = [...EPILOGUES]
+    .sort((a, b) => b.minScore - a.minScore)
+    .find((e) => state.score >= e.minScore);
   $("#epilogue-result").text(epilogueObject.text);
 }
 
 function restart() {
+  state.score = 0;
   state.gameStage = DIALOGUE;
   showGameStage();
   showDialogue(1);

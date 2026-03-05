@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="main.js"></script>
     <script src="loading.js"></script>
+    <script src="context.js"></script>
     <script src="dialogue.js"></script>
     <!-- You can add your own favicon and fonts by swapping out these links -->
     <link rel="icon" type="image/png" href="./characters/queen.png" />
@@ -35,7 +36,7 @@
           <h2>A Journey Through Pre-Colonial Africa</h2>
           <p>
             by
-            <a target="_blank" href="https://github.com/lindacson/narrative-game"
+            <a target="_blank" href="https://github.com/lindacson/"
               >Linda Son</a
             >
           </p>
@@ -128,7 +129,7 @@
             <p><strong>Character Sprites:</strong> Original artwork</p>
             <p>
               Built on the
-              <a target="_blank" href="https://github.com/lindacson/narrative-game">narrative-game</a>
+              <a target="_blank" href="https://github.com/reaganhenke/narrative-game">narrative-game</a>
               template.
             </p>
             <hr />
@@ -145,9 +146,23 @@
           <button onclick="playFromCredits()">play</button>
         </div>
       </div>
+      <div id="scene-context" class="hidden">
+        <div class="wrapper">
+          <div class="credits-content">
+            <div class="context-label">HISTORICAL CONTEXT</div>
+            <hr />
+            <h3 id="context-title"></h3>
+            <p id="context-time-row"><strong>TIME:</strong> <span id="context-time"></span></p>
+            <p id="context-location-row"><strong>LOCATION:</strong> <span id="context-location"></span></p>
+            <hr />
+            <div id="context-body"></div>
+          </div>
+          <button onclick="continueFromContext()">continue</button>
+        </div>
+      </div>
       <div id="epilogue" class="hidden">
         <p id="epilogue-result"></p>
-        <button onclick="restart()">play again?</button>
+        <button onclick="restart()">play again</button>
         <button onclick="showCredits()">credits</button>
       </div>
     </main>

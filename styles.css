@@ -22,6 +22,7 @@ main {
 #titlescreen:not(.hidden),
 #how-to-play:not(.hidden),
 #credits:not(.hidden),
+#scene-context:not(.hidden),
 #epilogue:not(.hidden) {
   display: flex;
   flex-direction: column;
@@ -309,6 +310,82 @@ main {
 }
 
 /******* END CREDITS SCREEN STYLING *******/
+
+/******* START SCENE CONTEXT SCREEN STYLING *******/
+
+#scene-context .wrapper {
+  width: 90%;
+  height: 90%;
+  background-color: white;
+  margin: 16px;
+  position: relative;
+  border-radius: 10px;
+  border: 2px solid #333;
+  box-shadow: 4px 4px #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 30px;
+}
+
+#scene-context .wrapper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: repeating-linear-gradient(to bottom, transparent, transparent 1px, white 1px, white 3px), repeating-linear-gradient(to right, #ccc, #ccc 1px, white 1px, white 3px);
+  border-radius: 9px 9px 0 0;
+  border-bottom: 2px solid #333;
+  box-sizing: border-box;
+  height: 30px;
+}
+
+#scene-context .wrapper::after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background-color: white;
+  left: 10px;
+  top: 6px;
+  border: 2px solid #333;
+  border-radius: 100%;
+}
+
+.context-label {
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: #555;
+  margin-bottom: 2px;
+}
+
+#scene-context h3 {
+  margin: 8px 0 4px;
+  font-size: 18px;
+}
+
+#scene-context button {
+  flex-shrink: 0;
+  background: repeating-linear-gradient(to bottom, transparent, transparent 1px, white 1px, white 3px), repeating-linear-gradient(to right, #ccc, #ccc 1px, white 1px, white 3px);
+  margin: 14px;
+  padding: 8px 20px;
+  font: inherit;
+  cursor: pointer;
+  border: 2px solid #333;
+  box-shadow: 4px 4px #333;
+  border-radius: 4px;
+  transition: all 0.1s;
+}
+
+#scene-context button:hover,
+#scene-context button:focus {
+  box-shadow: 2px 2px #333;
+  margin: 16px 12px 12px 16px;
+}
+
+/******* END SCENE CONTEXT SCREEN STYLING *******/
 
 /******* START DIALOGUE SCREEN STYLING *******/
 
