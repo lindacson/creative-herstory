@@ -158,6 +158,7 @@ function showSceneContext(sceneId) {
     $("#context-location-row").addClass("hidden");
   }
   $("#context-body").html(context.body);
+  $("#scene-context .credits-content").scrollTop(0);
 }
 
 function continueFromContext() {
