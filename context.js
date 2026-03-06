@@ -108,6 +108,112 @@ const SCENE_CONTEXTS = [
 <p>Their voices shaped kingdoms. Your choice now will determine whether this queen listens.</p>`,
     nextDialogue: 91,
   },
+  {
+    id: 6,
+    title: "SEVERED TIES",
+    body: `<p>You accepted Rome's terms, then watched their demands expand. When they asked for your people as labor, you drew the line — and expelled them.</p>
+<p>This is not the cleanest path to resistance, but it is not without advantage.</p>
+<p><strong>WHAT YOU GAINED:</strong></p>
+<p>Your period of engagement came at a cost — Rome saw your markets, your roads, your supply networks. But you also watched them. You know how their envoys speak, how their demands escalate, and what they value most.</p>
+<p>Nzinga of Ndongo (Angola, 1600s) used this same strategy — engaging the Portuguese long enough to understand their methods, then using that knowledge to outmaneuver them for three decades. She famously refused to accept a subordinate position, sitting on the back of an attendant when the Portuguese governor offered her no chair — a deliberate act of sovereign dignity.</p>
+<p><strong>YOUR POSITION:</strong></p>
+<ul>
+  <li>Treasury is lighter from lost trade revenue</li>
+  <li>Rome is angered — retaliation is coming</li>
+  <li>But your people stand behind you</li>
+  <li>And you understand the enemy</li>
+</ul>
+<p>The war that follows will test whether knowledge is worth the cost of delay.</p>`,
+    nextDialogue: 530,
+  },
+  {
+    id: 7,
+    title: "THE PEOPLE'S STAND",
+    body: `<p>You accepted Rome's alliance. You provided their workers. And when your own people — the merchant queens, the guild leaders, the market women who built Kush's wealth — organized and demanded you act, you finally listened.</p>
+<p>This is the hardest path to resistance. It is also, historically, one of the most powerful.</p>
+<p><strong>THE POWER OF COLLECTIVE ACTION:</strong></p>
+<p>Across African history, it was often organized communities — not individual rulers — who forced moments of resistance:</p>
+<ul>
+  <li><strong>The Women's War / Aba Riots (Nigeria, 1929)</strong> — Igbo and Ibibio market women organized through trade networks to force colonial administrators to respond; their collective action succeeded where individual protest had failed</li>
+  <li><strong>Market Women's Guilds (West Africa)</strong> — women who controlled trade used their economic leverage as political pressure; rulers who ignored their organized demands risked the collapse of the systems that sustained the kingdom</li>
+</ul>
+<p><strong>YOUR POSITION:</strong></p>
+<ul>
+  <li>Rome spent months inside your kingdom — they know your roads, markets, and supply lines</li>
+  <li>Direct confrontation would be fighting on their terms, with their intelligence</li>
+  <li>But you have your people's full support — and that is not nothing</li>
+</ul>
+<p>Late defiance is harder than early refusal. But the merchant queens who forced this moment will not abandon you now.</p>`,
+    nextDialogue: 160,
+  },
+  {
+    id: 8,
+    title: "MATRILINEAL SUCCESSION",
+    body: `<p>In the Kingdom of Kush, sovereignty was not inherited from father to son — it passed through the female line. The right to rule came from one's mother, not one's father.</p>
+<p><strong>HOW IT WORKED:</strong></p>
+<p>A Kandake's heir was typically her daughter. If she had no daughter, the throne passed to her sister's daughter — not to a son, not to a nephew through the male line. The king consort, however powerful, could not pass the Kandake title to his children directly. The throne followed the bloodline of women.</p>
+<p>This was not unique to Kush:</p>
+<ul>
+  <li><strong>Asante (Ghana)</strong> — the Ashanti golden stool, symbol of sovereignty, could only pass through the female line; women were the custodians of royal legitimacy</li>
+  <li><strong>Akan peoples (West Africa)</strong> — property, identity, and political rights descended matrilineally; a man's heirs were his sisters' children, not his own sons</li>
+  <li><strong>Ancient Egypt</strong> — pharaonic legitimacy was partly secured through royal women; queens carried the divine bloodline and marriage to a royal woman could legitimize rule</li>
+  <li><strong>Minangkabau (Indonesia)</strong> — one of the world's largest matrilineal societies; land and clan identity passed exclusively through the mother</li>
+</ul>
+<p><strong>WHY IT MATTERED:</strong></p>
+<p>Matrilineal succession protected female political power institutionally. It was not a favor granted by men — it was embedded in law and tradition. Challenging it meant challenging the entire architecture of legitimate rule.</p>
+<p>Today, you face exactly that challenge.</p>`,
+    nextDialogue: 102,
+  },
+  {
+    id: 9,
+    title: "QUEEN MOTHERS",
+    body: `<p>In African kingdoms, the Queen Mother was rarely just a ceremonial figure. She was often a political force equal to — and sometimes greater than — the reigning monarch.</p>
+<p><strong>THE POWER OF QUEEN MOTHERS:</strong></p>
+<ul>
+  <li><strong>Asante Ohemaa (Ghana)</strong> — the Queen Mother held the right to nominate candidates for the throne, could veto selections, and maintained her own court, treasury, and judicial authority; no king could be installed without her consent</li>
+  <li><strong>Yaa Asantewaa (1900)</strong> — when male chiefs refused to fight the British, this Asante Queen Mother took command of 5,000 warriors in the War of the Golden Stool — one of the last major armed African resistances to British colonization</li>
+  <li><strong>Kush Queen Mothers</strong> — Kushite queen mothers served as regents, advisors, and kingmakers; their portraits appear alongside rulers in temple reliefs, signaling co-sovereign status</li>
+  <li><strong>Dahomey (Benin)</strong> — the Kpojito, or "royal mother," held power parallel to the king and in some periods wielded greater religious and judicial authority</li>
+</ul>
+<p><strong>THE TENSION:</strong></p>
+<p>A queen mother's power could defend tradition — or challenge it. She held authority to shape succession precisely because she had raised the king. That same authority could be turned toward personal loyalty rather than institutional continuity.</p>
+<p>The queen mother before you is not wrong to love her grandson. The question is whether love should override eight hundred years of Kushite law.</p>`,
+    nextDialogue: 105,
+  },
+  {
+    id: 10,
+    title: "SEEING AFRICAN WOMEN CLEARLY",
+    body: `<p>When Western scholars, journalists, and storytellers discuss African women, they often do so through a lens shaped by colonialism — one that centers European values, prioritizes patrilineal inheritance, and treats African women's historical agency as exceptional rather than expected.</p>
+<p><strong>THE DISTORTIONS:</strong></p>
+<ul>
+  <li><strong>Erasing matrilineal systems</strong> — Western historiography long dismissed matrilineal succession as "primitive" or unstable, imposing European patriarchal norms as the standard for legitimate rule. This erased centuries of documented, functioning matrilineal governance across Africa.</li>
+  <li><strong>The "exceptional African woman" myth</strong> — figures like Amanirenas, Nzinga, and Yaa Asantewaa are often presented as remarkable exceptions in societies otherwise defined by female subordination. In reality, they were products of political systems that institutionalized female power.</li>
+  <li><strong>Victimhood as the default narrative</strong> — media and academic coverage of African women disproportionately emphasizes poverty, violence, and suffering — real issues, but an incomplete picture that suppresses evidence of sovereignty, strategy, and collective power.</li>
+  <li><strong>Projecting patriarchy backward</strong> — colonial administrators routinely overrode matrilineal succession with patrilineal rules, then recorded the resulting systems as if they had always existed. The historical record was rewritten in real time.</li>
+</ul>
+<p><strong>THE CONSEQUENCE:</strong></p>
+<p>When the story of African women is told primarily through a Western lens, it becomes a story of what was done to them — not what they built, commanded, negotiated, and protected. The game you just played is one attempt to tell the other story.</p>
+<p>The kingdom of Kush endured for centuries because of women who refused the terms offered to them. That refusal was not exceptional. It was tradition.</p>`,
+    nextDialogue: 204,
+  },
+  {
+    id: 11,
+    title: "MATRILINEAL SUCCESSION",
+    body: `<p>In the Kingdom of Kush, sovereignty was not inherited from father to son — it passed through the female line. The right to rule came from one's mother, not one's father.</p>
+<p><strong>HOW IT WORKED:</strong></p>
+<p>A Kandake's heir was typically her daughter. If she had no daughter, the throne passed to her sister's daughter — not to a son, not to a nephew through the male line. The king consort, however powerful, could not pass the Kandake title to his children directly. The throne followed the bloodline of women.</p>
+<p>This was not unique to Kush:</p>
+<ul>
+  <li><strong>Asante (Ghana)</strong> — the Ashanti golden stool, symbol of sovereignty, could only pass through the female line; women were the custodians of royal legitimacy</li>
+  <li><strong>Akan peoples (West Africa)</strong> — property, identity, and political rights descended matrilineally; a man's heirs were his sisters' children, not his own sons</li>
+  <li><strong>Ancient Egypt</strong> — pharaonic legitimacy was partly secured through royal women; queens carried the divine bloodline and marriage to a royal woman could legitimize rule</li>
+  <li><strong>Minangkabau (Indonesia)</strong> — one of the world's largest matrilineal societies; land and clan identity passed exclusively through the mother</li>
+</ul>
+<p><strong>WHY IT MATTERED:</strong></p>
+<p>Matrilineal succession protected female political power institutionally. It was not a favor granted by men — it was embedded in law and tradition. Challenging it meant challenging the entire architecture of legitimate rule.</p>
+<p>Under Roman influence, even this is being taken from you.</p>`,
+    nextDialogue: 201,
+  },
   // Add more scenes below following the same format:
   // {
   //   id: 3,
