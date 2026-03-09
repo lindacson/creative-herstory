@@ -983,9 +983,6 @@ const DIALOGUE_CONTENT = [
   },
 ];
 
-// Epilogues are selected by score threshold.
-// The highest minScore that is <= state.score wins.
-// Reachable scores: 0, 3, 4, 5, 6 (scores 1–2 are unreachable by design).
 const EPILOGUES = [
   {
     minScore: 5,
