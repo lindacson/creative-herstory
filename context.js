@@ -108,13 +108,4 @@ const SCENE_CONTEXTS = [
 <p>Their voices shaped kingdoms. Your choice now will determine whether this queen listens.</p>`,
     nextDialogue: 91,
   },
-  // Add more scenes below following the same format:
-  // {
-  //   id: 3,
-  //   title: "SCENE TITLE",
-  //   time: "DATE",          // optional — omit or leave empty to hide
-  //   location: "LOCATION",  // optional — omit or leave empty to hide
-  //   body: `<p>Context text here.</p>`,
-  //   nextDialogue: 999,
-  // },
 ];
