@@ -11,6 +11,7 @@ state = {
   gameStage: LOADING,
   isLoading: true,
   score: 0,
+  path: null,
 };
 
 function donePreloading() {
@@ -180,6 +181,9 @@ function selectOption(option) {
   if (option.points) {
     state.score += option.points;
   }
+  if (option.setPath) {
+    state.path = option.setPath;
+  }
   option.chatMoods?.forEach((chatMood) => {
     showChat(chatMood);
   });
@@ -248,17 +252,23 @@ function showGameStage() {
   }
 }
 
+function getEnding() {
+  if (state.path === "refused" && state.score >= 4) return EPILOGUES[0];
+  if (state.score >= 4) return EPILOGUES[1];
+  if (state.score >= 2) return EPILOGUES[2];
+  return EPILOGUES[3];
+}
+
 function showEpilogue() {
   state.gameStage = EPILOGUE;
   showGameStage();
-  const epilogueObject = [...EPILOGUES]
-    .sort((a, b) => b.minScore - a.minScore)
-    .find((e) => state.score >= e.minScore);
+  const epilogueObject = getEnding();
   $("#epilogue-result").text(epilogueObject.text);
 }
 
 function restart() {
   state.score = 0;
+  state.path = null;
   state.gameStage = DIALOGUE;
   showGameStage();
   showDialogue(1);
