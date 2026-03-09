@@ -207,7 +207,6 @@ const SCENE_CONTEXTS = [
   <li><strong>Asante (Ghana)</strong> — the Ashanti golden stool, symbol of sovereignty, could only pass through the female line; women were the custodians of royal legitimacy</li>
   <li><strong>Akan peoples (West Africa)</strong> — property, identity, and political rights descended matrilineally; a man's heirs were his sisters' children, not his own sons</li>
   <li><strong>Ancient Egypt</strong> — pharaonic legitimacy was partly secured through royal women; queens carried the divine bloodline and marriage to a royal woman could legitimize rule</li>
-  <li><strong>Minangkabau (Indonesia)</strong> — one of the world's largest matrilineal societies; land and clan identity passed exclusively through the mother</li>
 </ul>
 <p><strong>WHY IT MATTERED:</strong></p>
 <p>Matrilineal succession protected female political power institutionally. It was not a favor granted by men — it was embedded in law and tradition. Challenging it meant challenging the entire architecture of legitimate rule.</p>
